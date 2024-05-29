@@ -1,4 +1,4 @@
-const btn = document.getElementById('btn');
+const btnUp = document.getElementById('btnUp');
 
 let scrollPosition;
 window.addEventListener('scroll', function () {
@@ -7,7 +7,7 @@ window.addEventListener('scroll', function () {
 
 const smoothScroll = () => {
     if (scrollPosition > 0){
-        btn.style.display = 'none';
+        btnUp.style.display = 'none';
     }
 
     window.scrollTo({top: 0, behavior: "smooth"});
@@ -15,7 +15,7 @@ const smoothScroll = () => {
 }
 
 const setDisplayBlock = () => {
-    return btn.style.display = 'block'
+    return btnUp.style.display = 'block'
 }
 
-btn.addEventListener('click', () => smoothScroll());
+btnUp.addEventListener('click', () => smoothScroll());
