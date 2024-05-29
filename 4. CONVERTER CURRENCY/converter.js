@@ -48,7 +48,6 @@ function fetchData() {
 }
 
 function renderData(values) {
-
     let arrayCurrency = ['USD', 'EUR', 'SGD', 'MYR', 'CAD', 'JPY'];
 
     values.map((currency, index) => {
@@ -59,8 +58,8 @@ function renderData(values) {
         }
     )
 }
-
 fetchData()
+
 
 const getCurrentData = () => {
     const todayDate = new Date();
@@ -76,7 +75,9 @@ const updateDate = () => {
 updateDate()
 
 const minutes15 = 15000000
-setInterval(updateDate, minutes15)
+const hours12 = 1000*43.200
+setInterval(fetchData, minutes15)
+setInterval(updateDate, hours12)
 
 
 
