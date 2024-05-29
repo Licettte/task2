@@ -43,10 +43,40 @@ const promise6 = getCurrency(paramsJPY);
 
 function fetchData() {
     Promise.all([promise1, promise2, promise3, promise4, promise5, promise6]).then(function (values) {
-        console.log(values);
+        renderData(values)
     });
 }
 
+function renderData(values) {
+
+    let arrayCurrency = ['USD', 'EUR', 'SGD', 'MYR', 'CAD', 'JPY'];
+
+    values.map((currency, index) => {
+            let li = document.createElement("li");
+            document.getElementById("currency").appendChild(li);
+            let elem = document.getElementsByTagName('li');
+            elem[index].innerHTML = arrayCurrency[index] + ': ' + currency.data.toFixed(2)
+        }
+    )
+}
+
 fetchData()
+
+const getCurrentData = () => {
+    const todayDate = new Date();
+    const dd = String(todayDate.getDate()).padStart(2, '0');
+    const mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = todayDate.getFullYear()
+    return mm + '.' + dd + '.' + yyyy;
+}
+const updateDate = () => {
+    document.getElementById("currency__update-date").append(getCurrentData())
+}
+
+updateDate()
+
 const minutes15 = 15000000
-setInterval(fetchData, minutes15)
+setInterval(updateDate, minutes15)
+
+
+

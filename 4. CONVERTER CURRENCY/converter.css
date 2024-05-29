@@ -1,0 +1,32 @@
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.currencies {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+    background-color: rgba(98, 98, 98, 0.73);
+    border-radius: 20px;
+}
+
+.currency__elem {
+    margin: 20px;
+}
+
+#currency {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+img {
+    width: 200px
+}
+
+p {
+    width: 200px;
+}
