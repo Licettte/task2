@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.cards {
+    margin: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #dadada;
+    background-color: #fcf2e5;
+}
+
+img {
+    width: 100%;
+}
+
+.card__arrow {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: flex-end;
+}
+
+.arrow{
+    position: relative;
+    bottom: 25px;
+    right: 25px;
+    background-color: rgba(100, 149, 237, 0.35);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 20px;
+}
+
+.arrow:hover {
+    background-color: rgba(223, 150, 238, 0.5);
+}

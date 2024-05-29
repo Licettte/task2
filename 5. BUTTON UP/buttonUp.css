@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.arrowUp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: rgba(100, 149, 237, 0.35);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.arrowUp:hover {
+    background-color: rgba(223, 150, 238, 0.5);
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    text-align: justify;
+    width: 90%;
+}
