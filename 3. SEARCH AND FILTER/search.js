@@ -12,6 +12,7 @@ const inputText = document.getElementById('search')
 
 const filter = (e) => {
     e.target.value
+
 }
 
 inputText.addEventListener('keydown', (e) => filter(e));

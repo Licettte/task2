@@ -1,31 +1,32 @@
 const _url = 'https://currency-exchange.p.rapidapi.com/exchange'
+const _key= '9b22d0ae08mshc40fd4d0d0f4364p170e2ajsn418a62d34a25'
 const headers = {
-    'x-rapidapi-key': '9b22d0ae08mshc40fd4d0d0f4364p170e2ajsn418a62d34a25',
+    'x-rapidapi-key': _key,
     'x-rapidapi-host': 'currency-exchange.p.rapidapi.com'
 }
 
 //TODO вынести в константы
-const paramsUSD = {
+const USDtoRUB = {
     from: 'USD',
     to: 'RUB'
 }
-const paramsEUR = {
+const EURtoRUB = {
     from: 'EUR',
     to: 'RUB'
 }
-const paramsSGD = {
+const SGDtoRUB = {
     from: 'SGD',
     to: 'RUB'
 }
-const paramsMYR = {
+const MYRtoRUB = {
     from: 'MYR',
     to: 'RUB'
 }
-const paramsCAD = {
+const CADtoRUB = {
     from: 'CAD',
     to: 'RUB'
 }
-const paramsJPY = {
+const JPYtoRUB = {
     from: 'JPY',
     to: 'RUB'
 }
@@ -34,12 +35,12 @@ const getCurrency = (params) => {
     return axios.get(_url, {params: params, headers: headers});
 }
 
-const promise1 = getCurrency(paramsUSD);
-const promise2 = getCurrency(paramsEUR);
-const promise3 = getCurrency(paramsSGD);
-const promise4 = getCurrency(paramsMYR);
-const promise5 = getCurrency(paramsCAD);
-const promise6 = getCurrency(paramsJPY);
+const promise1 = getCurrency(USDtoRUB);
+const promise2 = getCurrency(EURtoRUB);
+const promise3 = getCurrency(SGDtoRUB);
+const promise4 = getCurrency(MYRtoRUB);
+const promise5 = getCurrency(CADtoRUB);
+const promise6 = getCurrency(JPYtoRUB);
 
 function fetchData() {
     Promise.all([promise1, promise2, promise3, promise4, promise5, promise6]).then(function (values) {
