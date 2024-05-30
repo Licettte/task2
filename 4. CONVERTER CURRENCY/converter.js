@@ -76,7 +76,9 @@ const getCurrentData = () => {
     const dd = String(todayDate.getDate()).padStart(2, '0');
     const mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
     const yyyy = todayDate.getFullYear()
-    return mm + '.' + dd + '.' + yyyy;
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone.slice(7)
+
+    return mm + '.' + dd + '.' + yyyy +' ' + timeZone;
 }
 const updateDate = () => {
     document.getElementById("currency__update-date").append(getCurrentData())
