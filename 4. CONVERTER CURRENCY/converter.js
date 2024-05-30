@@ -87,7 +87,6 @@ const updateDate = () => {
 updateDate()
 
 const minutes15 = 15000000
-const hours12 = 1000 * 43.200
 
 setInterval(fetchData, minutes15)
-setInterval(updateDate, hours12)
+
