@@ -1,16 +1,17 @@
 
 const _url = "https://jsonplaceholder.typicode.com/photos"
 
-axios.get(_url)
-    .then(function (response) {
-        // handle success
-        console.log(response.data);
+    axios.get(_url)
+    .then((response) => {
+        console.log(response.data, "response.data" )
+        return response.data;
     })
-    .catch(function (error) {
-        // handle error
-        console.log(error);
-    })
-    .finally(function () {
-        // always executed
-    });
+    .catch((error) => {
+        if (error.response) {
+            console.log(error.response.data.message)
 
+        } else if (error.request) {
+            console.log(error.request.message)
+        }
+        console.log(error)
+    });

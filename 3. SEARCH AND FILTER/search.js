@@ -1,4 +1,4 @@
-const fruits = ["apple", "avocado", "Pear", "peach", "Plum", "eggplant", "pineapple"]
+const fruits = ["apple", "avocado", "pear", "peach", "plum", "eggplant", "pineapple"]
 const container = document.getElementById('container')
 const inputText = document.getElementById('search')
 inputText.addEventListener('keyup', (e) => filter(e));
@@ -16,7 +16,7 @@ const renderArray = (array) => {
 renderArray(fruits)
 
 const filter = (e) => {
-    let array = (fruits.filter(element => element.includes(e.target.value)));
+    let array = (fruits.filter(element => element.includes(e.target.value.toLowerCase())));
     renderFilterArray(array)
 }
 
