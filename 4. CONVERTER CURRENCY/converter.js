@@ -1,34 +1,43 @@
 const _url = 'https://currency-exchange.p.rapidapi.com/exchange'
-const _key= '9b22d0ae08mshc40fd4d0d0f4364p170e2ajsn418a62d34a25'
+const _key = '9b22d0ae08mshc40fd4d0d0f4364p170e2ajsn418a62d34a25'
 const headers = {
     'x-rapidapi-key': _key,
     'x-rapidapi-host': 'currency-exchange.p.rapidapi.com'
 }
 
 //TODO вынести в константы
+
+const RUB = 'RUB'
+const USD = 'USD'
+const EUR = 'EUR'
+const SGD = 'SGD'
+const MYR = 'MYR'
+const CAD = 'CAD'
+const JPY = 'JPY'
+
 const USDtoRUB = {
-    from: 'USD',
-    to: 'RUB'
+    from: USD,
+    to: RUB
 }
 const EURtoRUB = {
-    from: 'EUR',
-    to: 'RUB'
+    from: EUR,
+    to: RUB
 }
 const SGDtoRUB = {
-    from: 'SGD',
-    to: 'RUB'
+    from: SGD,
+    to: RUB
 }
 const MYRtoRUB = {
-    from: 'MYR',
-    to: 'RUB'
+    from: MYR,
+    to: RUB
 }
 const CADtoRUB = {
-    from: 'CAD',
-    to: 'RUB'
+    from: CAD,
+    to: RUB
 }
 const JPYtoRUB = {
-    from: 'JPY',
-    to: 'RUB'
+    from: JPY,
+    to: RUB
 }
 
 const getCurrency = (params) => {
@@ -76,7 +85,7 @@ const updateDate = () => {
 updateDate()
 
 const minutes15 = 15000000
-const hours12 = 1000*43.200
+const hours12 = 1000 * 43.200
 
 setInterval(fetchData, minutes15)
 setInterval(updateDate, hours12)
