@@ -58,7 +58,7 @@ function fetchData() {
 }
 
 function renderData(values) {
-    let arrayCurrency = ['USD', 'EUR', 'SGD', 'MYR', 'CAD', 'JPY'];
+    let arrayCurrency = [USD, EUR, SGD, MYR, CAD, JPY];
 
     values.map((currency, index) => {
             let li = document.createElement("li");
