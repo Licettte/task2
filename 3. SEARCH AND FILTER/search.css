@@ -9,8 +9,13 @@ p {
     width: 200px;
     border: 1px solid black;
     text-align: center;
+    margin: 0;
+    padding: 5px;
+}
+.search {
+    width: 700px;
 }
 
-#search {
-    width: 1000px;
+.search__container{
+    margin: 20px;
 }
