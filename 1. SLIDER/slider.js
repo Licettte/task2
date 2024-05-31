@@ -4,6 +4,8 @@ const container = document.getElementById('container')
 const btnPrev = document.getElementById('arrowLeft')
 const btnNext = document.getElementById('arrowRight')
 
+btnPrev.disabled = true
+
 let currentIndexSlider = 0
 let arraySlider = []
 const getData = (url) => {
@@ -25,7 +27,6 @@ const getData = (url) => {
 
 getData(_url)
 
-btnPrev.disabled = true
 const isDisabled = () => {
     btnPrev.disabled = currentIndexSlider === 0;
     btnNext.disabled = currentIndexSlider === arraySlider.length - 1;
