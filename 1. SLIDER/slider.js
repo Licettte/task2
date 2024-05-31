@@ -1,4 +1,5 @@
-const _url = "https://jsonplaceholder.typicode.com/photos"
+const _url = "https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5"
+
 const container = document.getElementById('container')
 const btnPrev = document.getElementById('arrowLeft')
 const btnNext = document.getElementById('arrowRight')
@@ -8,7 +9,7 @@ let arraySlider = []
 const getData = (url) => {
     axios.get(url)
         .then((response) => {
-            arraySlider = response.data.slice(0, 5)
+            arraySlider = response.data
             createElem(arraySlider)
         })
         .catch((error) => {
