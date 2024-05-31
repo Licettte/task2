@@ -19,7 +19,7 @@ const filter = (e) => {
     let array = (fruits.filter(element => element.includes(e.target.value.toLowerCase())));
     renderFilterArray(array)
 }
-
+// или сделать display: block | display: none
 const deleteItems = () => {
     container.querySelectorAll('p')
         .forEach((fruit) => fruit.remove())
