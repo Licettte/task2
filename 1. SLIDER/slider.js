@@ -24,6 +24,7 @@ const getData = (url) => {
 
 getData(_url)
 
+btnPrev.disabled = true
 const isDisabled = () => {
     btnPrev.disabled = currentIndexSlider === 0;
     btnNext.disabled = currentIndexSlider === arraySlider.length - 1;
@@ -35,11 +36,8 @@ const nextSlide = () => {
     renderSlider(currentIndexSlider)
 }
 const prevSlide = () => {
-
-    if (currentIndexSlider !== 0) {
-        currentIndexSlider--
-        renderSlider(currentIndexSlider)
-    }
+    currentIndexSlider--
+    renderSlider(currentIndexSlider)
     isDisabled();
 }
 
