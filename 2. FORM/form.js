@@ -7,22 +7,16 @@ const passwordRegex = '^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,8}$'
 inputPassword.addEventListener('keyup', (e) => checkPassword(e));
 
 const checkPassword = (e) => {
-    let isValid;
-    e.target.value.match(passwordRegex) ? isValid = true :  isValid = false
-    submitPassword(e, isValid)
+    submitPassword(e, e.target.value.match(passwordRegex))
 }
 
 const submitPassword = (e, isValid) => {
-
     console.log(isValid, "isValid")
     e.preventDefault();
-     isValid ?
-        inputPassword.classList.add('success')
-
+    isValid ? inputPassword.classList.add('success')
         :
         inputPassword.classList.add('error')
-    passwordError.style.visibility="visible"
-
+          passwordError.style.visibility = "visible"
 }
 
 btnSubmit.addEventListener('click', submitPassword)
