@@ -20,6 +20,11 @@
     background-image: url(https://www.panchemodan.ru/bitrix/templates/panchemodan_mobile/img/closered.png);
     border: red 1px solid;
 }
+.password__error{
+    color: red;
+    visibility: hidden;
+
+}
 
 input {
     border: 1px solid #ccc;
