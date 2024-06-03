@@ -6,17 +6,24 @@ const passwordError = document.querySelector('.password__error');
 const passwordRegex = '^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,8}$'
 inputPassword.addEventListener('keyup', (e) => checkPassword(e));
 
+let isValid = false;
+
 const checkPassword = (e) => {
-    submitPassword(e, e.target.value.match(passwordRegex))
+    e.target.value.match(passwordRegex) ? isValid = true : isValid = false
 }
 
-const submitPassword = (e, isValid) => {
-    console.log(isValid, "isValid")
+const submitPassword = (e) => {
     e.preventDefault();
-    isValid ? inputPassword.classList.add('success')
-        :
+    if (isValid) {
+        inputPassword.classList.remove('error')
+        passwordError.style.visibility = "hidden"
+        inputPassword.classList.add('success')
+    } else {
+        inputPassword.classList.remove('success')
         inputPassword.classList.add('error')
-          passwordError.style.visibility = "visible"
+        passwordError.style.visibility = "visible"
+    }
 }
+
 
 btnSubmit.addEventListener('click', submitPassword)
